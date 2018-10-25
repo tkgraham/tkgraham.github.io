@@ -1,0 +1,357 @@
+/* ** To change the width of the right column, just change the right padding of
+        the body, the width of the #right, and the right-margin
+        of the #footer by the same amount. */
+
+        /* ** To change the width of the left column, change the body's left padding by the
+        desired amount, the #left's "right" attribute and width by the desired amount, and 
+        the #footer's left-margin by the desired amount. */
+
+        /* ** In either scenario above, you can eliminate the content by deleting it. */
+
+        /* ** To eliminate the right column, change the margin of the body to 40px (to account
+        for the margin on the main body content), the margin-right of the #footer to 
+        -40px and, obviously, delete the right column. */
+
+        .two-unequal-columns {
+            /* see INDEX */
+        }
+
+        .two-equal-columns {
+            /*this is the default */
+        }
+
+        .single-content-body {
+            /* see PLACES */
+        }
+
+        .one-left-column {
+            /* tbd */
+        }
+
+        .one-right-column {
+
+        }
+
+		body {
+            min-width: 2400px;       /* LC fullwidth + CC padding */
+            margin: 0;
+            font-family: 'Spectral', Georgia, serif;
+            font-weight: 200;
+            box-sizing: border-box;
+            background: rgb(238, 235, 235);
+		}
+
+		#footer {
+            clear: both;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: #7D3568;
+            font-size: small;
+            text-align: center;
+            font-family: 'Raleway', 'Arial Narrow', Arial, Helvetica, sans-serif;
+            line-height: 1.3rem;
+            border-top: 40px solid #7D3568;
+            padding-bottom: 30px;
+        }
+        #footer p, #footer ul {
+            opacity: 0.5;
+        }
+        #footer a {
+            color: gold;
+
+        }
+        
+        #footer #center .social-list a, #footer #center .social-list a img {
+            display: inline-block;
+        }
+
+		.column {
+			position: relative;
+			float: left;
+		}
+
+		.main-content #center {
+			padding: 0 100px 0 200px;
+            width: 100%;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, .4);
+            margin-bottom: 360px;
+            z-index: 100;
+            box-sizing: border-box;
+            background: #DDD;
+
+		}
+
+		#left {
+			width: 130px;           /* LC content width (sans padding) */
+			padding: 0 10px;        /* LC padding */
+			right: 190px;           /* LC fullwidth + CC padding */
+			margin-left: -100%;
+		}
+
+		#right {
+			width: 130px;           /* RC width */
+			padding: 0 10px;        /* RC padding */
+			margin-right: -100%;
+		}
+
+		/*** IE Fix ***/
+		* html #left {
+			left: 150px;            /* RC fullwidth */
+		}
+
+		/*** Just for Looks ***/
+
+		.column {
+			padding-top: 1em;
+			text-align: justify;
+		}
+        
+        #footer .column {
+            padding: 15px 2% 15px 2%;
+            box-sizing: border-box;
+            background-color: #7D3568;
+            color: white;
+        }
+        #footer h3 {
+            text-align: left;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        #footer ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        #footer li {
+            line-height: 1.5em; 
+        }
+    
+        .main-content {
+            padding-top: 100px;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Raleway', 'Arial Narrow', Arial, sans-serif;
+        }
+
+
+    /* HEADER STYLES */
+
+        #main_menu .navbar>ul>li>a {
+            padding-top: 15px;
+            padding-bottom: 20px;
+            font-size: 0.875rem;
+            color: #333;
+        }
+
+        .navbar>ul>li>a:hover {
+            color: orange;
+        }
+
+        .navbar-fixed-top {
+            padding-top: 0px;
+            padding-bottom: 0px;
+            position: fixed;
+            top: 0; 
+            left: 0; 
+            right: 0; 
+            z-index: 300;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+            -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+            background-color:#fff;
+            height: 100px;
+   }
+
+.navbar-brand {
+    float: left;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 18px;
+    margin: 0 0 0 5%;
+    height: 100%;
+}
+
+.overflow-protection {
+    padding-left: 180px;
+    padding-right: 7%;
+}
+
+.navbar-brand img {
+    height: 100%;
+}
+
+/* CHOPPING BLOCK */
+
+.navbar-right {
+    float:right;
+    padding-left: 0;
+    list-style: none;
+    min-height: 50px;
+    margin: 23px 0 15px 0;
+    padding-top: 12px;
+    min-width: 300px;
+}
+
+.navbar-right li {
+    float: left;
+    display: block;
+    width: 114px;
+    letter-spacing: 1px;
+
+}
+
+.navbar-right ul {
+    vertical-align: middle;
+    text-align: center;
+}
+
+.navbar-right li a:link {
+    color: black;
+    text-decoration: none;
+    font-size: 20pt;
+}
+
+.navbar-right li a:hover, .navbar-right li a:focus{
+    color: orange;
+}
+
+/* ADAPTIVE SIZING */
+
+@media (max-width: 813px) {
+    .navbar-fixed-top {
+        height: 200px;
+        padding: 0 10px;
+        min-width: 420px;
+        overflow: scroll;
+        text-align: left;
+    }
+    .navbar-right, .navbar-right li {
+        float: none;
+        text-align: left;
+        ;
+    }
+
+    .navbar-right {
+        margin: 0;
+        padding-top: 20px;
+    }
+
+    .navbar-brand {
+        margin: 0px;
+        padding: 0;
+        width: 65%;
+        text-align: center;
+    }
+    .main-content {
+        padding-top: 203px;
+    }
+    .overflow-protection {
+        padding: 0;
+        display: inline-block;
+        width: 35%;
+        line-height: 1.9em;
+    }
+}
+
+@media (max-width: 700px) {
+    #footer {position: unset; }
+
+    .main-content #center {margin-bottom: 0;}
+
+    #footer .column {
+        padding-top: 0;
+        padding-bottom: 0;
+        float: none;
+    }
+    #footer h3 {margin-bottom: 21px; }
+    .col-s-1 {width: 8.33%;}
+    .col-s-2 {width: 16.66%;}
+    .col-s-3 {width: 25%;}
+    .col-s-4 {width: 33.33%;}
+    .col-s-5 {width: 41.66%;}
+    .col-s-6 {width: 50%;}
+    .col-s-7 {width: 58.33%;}
+    .col-s-8 {width: 66.66%;}
+    .col-s-9 {width: 75%;}
+    .col-s-10 {width: 83.33%;}
+    .col-s-11 {width: 91.66%;}
+    .col-s-12 {width: 100%;}
+}
+
+@media (min-width: 1200px) {
+    .navbar-right li a:link {
+        font-size: 26pt;
+        letter-spacing: 2px;
+    }
+    .navbar-right {
+        padding-top: 6px;
+    }
+
+    .navbar-right li {
+        width: 14vw;
+    }
+    .overflow-protection {
+        padding-right: 3%;
+    }
+}
+/* END ADAPTIVE SIZING */
+
+@media (min-width: 1200px) {
+    .col-xl-1 {width: 8.33%;}
+    .col-xl-2 {width: 16.66%;}
+    .col-xl-3 {width: 25%;}
+    .col-xl-4 {width: 33.33%;}
+    .col-xl-5 {width: 41.66%;}
+    .col-xl-6 {width: 50%;}
+    .col-xl-7 {width: 58.33%;}
+    .col-xl-8 {width: 66.66%;}
+    .col-xl-9 {width: 75%;}
+    .col-xl-10 {width: 83.33%;}
+    .col-xl-11 {width: 91.66%;}
+    .col-xl-12 {width: 100%;}
+    .main-content #center {margin-bottom: 222px;}
+}
+@media (min-width: 1000px) and (max-width: 1199px) {
+    .col-l-1 {width: 8.33%;}
+    .col-l-2 {width: 16.66%;}
+    .col-l-3 {width: 25%;}
+    .col-l-4 {width: 33.33%;}
+    .col-l-5 {width: 41.66%;}
+    .col-l-6 {width: 50%;}
+    .col-l-7 {width: 58.33%;}
+    .col-l-8 {width: 66.66%;}
+    .col-l-9 {width: 75%;}
+    .col-l-10 {width: 83.33%;}
+    .col-l-11 {width: 91.66%;}
+    .col-l-12 {width: 100%;}
+    .main-content #center {margin-bottom: 275px;}
+
+}
+@media (min-width: 700px) and (max-width: 999px) {
+    .col-m-1 {width: 8.33%;}
+    .col-m-2 {width: 16.66%;}
+    .col-m-3 {width: 25%;}
+    .col-m-4 {width: 33.33%;}
+    .col-m-5 {width: 41.66%;}
+    .col-m-6 {width: 50%;}
+    .col-m-7 {width: 58.33%;}
+    .col-m-8 {width: 66.66%;}
+    .col-m-9 {width: 75%;}
+    .col-m-10 {width: 83.33%;}
+    .col-m-11 {width: 91.66%;}
+    .col-m-12 {width: 100%;}
+    .main-content #center {margin-bottom: 300px;}
+}
+
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%; display: inline-block;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%; display: inline-block;}
