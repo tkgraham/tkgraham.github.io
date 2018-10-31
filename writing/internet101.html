@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>TKG Writing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="DESCRIPTION HERE">
+    <link rel="shortcut icon" href="../images/home-icon-4.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Spectral" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    <link rel="stylesheet" type="text/css" href="../responsive.css">
+</head>
+
+<body>
+    <!--HEADER-->
+    <div id="main_menu"></div>
+    <header class="navbar-fixed-top">
+        <a class="navbar-brand" href="../index.html">
+            <img src="../images/home-icon.png" alt="My home icon.">
+        </a>
+        <div class="overflow-protection">
+            <ul class="navbar-right">
+                <li>
+                    <a href="../about.html">about</a>
+                </li>
+                <li>
+                    <a href="../wood.html">wood</a>
+                </li>
+                <li class="current">
+                    <!--LEFT BORDER ON CURRENT PAGE-->
+                    <a href="../writing.html">writing</a>
+                </li>
+                <li>
+                    <a href="../places.html">places</a>
+                </li>
+                <li>
+                    <a href="../running.html">running</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <!--FIN DE HEADER-->
+
+    <div class="main-content">
+        <div class="flex-box">
+            <div id="center" class="column">
+                <h1>Internet 101: Infrastructure and Security</h1>
+                <p><em>I wrote this article for a tech website called www.techjunkie.com when I was working as a freelance
+                    writer on UpWork. It answers the question "what happens when I click a url"?
+                </em></p>
+                <p>
+                    The internet is all around us, figuratively and literally. It is talked about all the time—in news,
+                    business, and popular culture—and impacts a huge number of our daily interactions. However, most people
+                    do not understand the different pieces that comprise this complex global infrastructure, nor how they
+                    interact with one another. The fact that we can (almost) instantly send emails from Nebraska to Japan,
+                    and have those emails beautifully render in a well-designed app on our smartphones can be too easily
+                    taken for granted in the 21st century.
+                </p>
+                <p>
+                    This article probes into some of the basic functionality of the internet, and hopes to answer questions
+                    that may at first seem too obvious to ask: What is the internet? What happens when I connect to it? Is
+                    my data really secure, and if so, how does that work? We won’t get all the way into the 1s and 0s, but
+                    after reading, you should be able to impress your friends with your knowledge of these fundamental
+                    concepts.
+                </p>
+                <p>
+                    What is the internet? The internet (read: Interconnected Network) is often discussed as if there is one
+                    single repository of information that your devices tap into when you log in to email or search for a
+                    nice brownie recipe. This is not the case. Rather, it is a global network of interconnected devices,
+                    each of which has the ability to send and receive information.
+                </p>
+                <p>
+                    Consider first a small group of computers, like might exist within an office or apartment complex. If
+                    these computers are linked together, they form a network that can allow each to access the information
+                    housed on the other machines. Why have several devices rather than just one, super-powerful device? For
+                    one, this setup allows for many users to create and access information simultaneously. This boosts
+                    their potential work output many-fold. It also allows the various components of a network to each
+                    specialize in a particular function. Some devices may have more information-storing capacity while
+                    others may host special applications that the others cannot run. Some might be designed for human
+                    interaction (i.e. have a keyboard, mouse, and screen) while others (like servers, specialized devices
+                    or programs which provide functionality to other devices) may only do computation and retrieve
+                    information. The ability to share information quickly among a multitude of diverse, specialized devices
+                    is, at its core, the power of the internet
+                </p>
+                <p>
+                    Now, imagine that there are several of these small networks in a cluster—if the network mentioned above
+                    is a neighborhood, then this cluster of networks is like a city. The analogy can be expanded many-fold,
+                    with states, countries, and even continents worth of networks and devices. The global internet is a
+                    multi-tiered network of networks. In the real world, many of these individual networks specialize in
+                    providing a service to other users who access that network. YouTube, for example, stores lots of videos
+                    at warehouse-like data centers, vast repositories of information, which can then be accessed by users
+                    like you. Facebook’s servers constantly update information about the profiles of all their members,
+                    analyzing and repackaging it in order to engage users. It is a constantly expanding web of information
+                    providers (servers) and retrievers (clients).
+                </p>
+                <p>
+                    Internet Service Providers: But, you may be wondering, how is this information actually exchanged? How
+                    does my status update make it to Facebook and then to my friend’s timeline? This is where your Internet
+                    Service Provider (ISP, from here on out) comes in. They don’t own the information on the internet, but
+                    control the cables through which our data flows. In the networks-are-cities analogy above, ISPs pave
+                    and maintain the highways. Your monthly payment to Comcast, AT&T, Time Warner Cable, or any of the
+                    hundreds of other ISPs around the world, provides you access to the physical infrastructure that links
+                    all the other internet-enabled devices in the world. This global network of high-speed cables is
+                    capable of transmitting terabytes (thousands of gigabytes) of data per second at nearly the speed of
+                    light. Not a bad deal, eh?
+                </p>
+                <p>
+                    (Possibly delete this paragraph.) The economics of the ISP are an interesting corollary to our
+                    discussion of the internet. If you subscribe to a small, regional ISP, then the fact that they can
+                    connect you to computers anywhere in the world may seem surprising. In fact, only a few of the largest,
+                    so-called Tier 1 ISPs (Verizon, AT&T, Tata Communications in India, CenturyLink, etc.; there are only
+                    ~15 Tier 1 ISPs) in the world can afford to lay transcontinental cables on the ocean floor. All of the
+                    other small, local ISPs compete by building infrastructure in remote areas that the larger ISPs do not
+                    want to invest in. They pay the Tier 1 companies for access to their global networks, while in turn
+                    handling the data and requests of Tier 1 subscribers to computers in the region that their
+                    infrastructure supports. Even Tier 1 ISPs tend not to have the infrastructure necessary to handle all
+                    of the data that they are requested to transmit at any time, nor to reach all the destinations that
+                    their customers request. To alleviate these issues, they ‘peer’ with other ISPs to pick up their
+                    bandwidth or geographical slack. For example, Comcast might say to AT&T, “I have cables in Wyoming but
+                    not Alaska. You have cables in Alaska, but not Wyoming. If you service all my customers in Alaska, I’ll
+                    service all yours in Wyoming.” This allows all ISPs to provide the full suite of internet services to
+                    their customers.
+                </p>
+                <p>
+                    When I click a link or enter a URL into my address bar, what happens? So far, we have introduced the
+                    major infrastructure of the internet: a global network of devices which store and retrieve information,
+                    and the high-speed cables provided by ISPs that pass information among these devices. The next thing to
+                    demystify is how this communication actually takes place.
+                </p>
+                <p>
+                    You are probably using an Internet Browser to read this article. It might be Safari, Chrome, Mozilla,
+                    Internet Explorer, Opera, or one of many others. And you almost certainly clicked a link to reach the
+                    article, or otherwise typed a URL (Unique Resource Locator) into your browser’s address bar in order to
+                    reach it. Both of these activities are fundamental to retrieve information from the internet. Chances
+                    are, you have opened a new web page dozens or even hundreds of times so far today. Your browser makes
+                    the process of surfing the web seem very simple—it is, of course, designed to have this effect. But
+                    what goes on beneath the hood is incredibly complex. People study it for years at university without
+                    achieving a full understanding. Luckily, the basic events can be explained fairly quickly without
+                    becoming lost in the nitty gritty. There are 4 basic steps, each a different protocol that your browser
+                    executes:
+                </p>
+                <p>
+                    1. DNS (Domain Name System), where your browser identifies where it can find a given website;
+                </p>
+                <p> 2. TCP (Transport Control Protocol), which establishes a connection between your computer and the
+                    website’s server;
+                </p>
+                <p> 3. SSL/TLS (Secure Socket Layer/Transport Layer Security), an optional encryption step which we will
+                    discuss in the next section; and
+                </p>
+                <p> 4. HTTP (Hypertext Transfer Protocol), by which the actual content of the website is shared.
+                </p>
+                <p>
+                    When you enter a website URL like www.techjunkie.com, the first thing that your browser needs to do is
+                    identify where on the internet that website can be found. Every URL has a unique IP (Internet Protocol)
+                    address which, like your home address, encodes its location within the global internet. The fact that
+                    we specify our internet destinations with textual URLs rather than numerical IP addresses is a
+                    practical simplification. We humans cannot remember series of numbers as easily as we can catchy names
+                    like Tech Junkie. Your computer, though, needs the website’s IP address in order to find it. Asking it
+                    to visit www.techjunkie.com without the IP would be like asking you to find Sarah without providing any
+                    information about what country she lives in.
+                </p>
+                <p>
+                    There are several places where the IP address of your intended website may be referenced. Your browser
+                    searches each of these in a hierarchical fashion until it it found, beginning with the easiest. If you
+                    have visited your intended site recently (within the last half hour, say), the IP is likely still
+                    stored in your browser’s cache. (Caches are common features of computer programs where frequently
+                    referenced data is stored for quick access. Your browser has one, as does your computer’s operating
+                    system.) If the IP is not cached, your browser will run a protocol called DNS (Domain Name System)
+                    which relays the request to identify the IP out into the internet. It sends out a question—essentially,
+                    “what is www.techjunkie.com”?—formatted according to the DNS protocol. The request will first go to
+                    your router, which also has its own cache and may be able to return the correct IP address to you. If
+                    not, then the request will be passed along by your router to your ISP’s DNS server, where they store
+                    the names and IP addresses of millions of websites as a service to their customers.
+                </p>
+                <p>
+                    If your ISP cannot identify a website, the request is passed along yet again to one of several Server
+                    Managers whose job, among others, is to maintain registries websites on the internet. For example, a
+                    company called Verisign holds and manages the routing information for all websites ending in .com and
+                    .net. The Server Manager would answer your browser’s request, returning a block of information that
+                    contains the desired IP. Without any webpage data having yet been exchanged, just locating a site’s IP
+                    could involve relaying your request all over the world.
+                </p>
+                <p>
+                    With the IP address now known, the next step is for your computer—which we will refer to as the
+                    “client”—to set up a connection with the physical server where your website is hosted (read: where its
+                    data is stored). This procedure is called TCP (Transmission Control Protocol), often referred to as the
+                    “TCP Handshake.” You can think of it as the greeting which comes before a conversation.
+                </p>
+                <p>
+                    Three introductory pieces of information are exchanged between client and server. The client first
+                    sends one declaring its intent to communicate (‘syn’, for synchronize). The server then replies
+                    indicating its availability to connect (‘syn-ack,’ for synchronize-acknowledge). Finally, the client
+                    sends a third (‘ack’) to acknowledge receipt of the server’s reply. This process establishes a
+                    connection. Each party then knows that the other exists, wants to communicate with them, is aware of
+                    their location, and has agreed upon a format for exchanging information. This last feature—how the
+                    information should be structured—is especially important given that not all browsers can support all
+                    types of data or formatting.
+                </p>
+                <p>
+                    Only after the browser has received the IP address through DNS and the client-server connection has
+                    been established via the TCP handshake can the browser send specific information requests to the
+                    server. These requests are formatted using HTTP, the Hypertext Transfer Protocol. Assuming that the
+                    browser’s request is allowed by the server, it then returns a data stream in HTML (hypertext markup
+                    language) to your browser describing the webpage that you are trying to visit. This includes textual
+                    content as well as descriptions of format, color, style, and more. Your browser immediately begins to
+                    interpret and render the HTML data into a webpage like this one as soon as it is received.
+                </p>
+                <p>
+                    On the modern internet, it is likely that the HTML data being returned by the server will contain
+                    references to other http:// links which must be retrieved in order to fully render the webpage. Some
+                    examples of this are CSS styling libraries and JavaScript, which the browser needs to interpret complex
+                    stylistic commands (fades, movement, layered content) or enable user interactivity. The page might also
+                    include links to pictures or ad content. Accessing each of these other links, some of which may be
+                    stored on other servers at different IP addresses, will initiate new IP retrieval via DNS, a new TCP
+                    handshake, and new HTTP requests. Every connection goes through this process. For anything other than
+                    bare bones websites, your browser is likely sending multiple requests and processing many incoming
+                    streams of HTML data at any give time. Data may come back at different rates if your ISP is
+                    experiencing high network traffic, or if one server is particularly slow to reach and respond. This is
+                    why you may see the content on some complex webpages shuffle around as the data needed to render
+                    various components is received. Even so, this whole process is remarkably fast. The information encoded
+                    in this webpage likely traveled through thousands of miles of cables to reach you, all in less than the
+                    amount of time it takes you to blink!
+                </p>
+                <p>
+                    While your browser is performing a complicated task in managing data requests and rendering the
+                    results, there is also a tremendous amount of complexity on the server side. High-traffic websites like
+                    Facebook receive millions of individual HTTP requests every second, which can strain their servers if
+                    data management and retrieval are not optimally implemented. Pages like Facebook’s also update in real
+                    time, relying on a constant stream of back and forth HTTP requests and responses. Considering that
+                    millions of Facebook users are in continuous contact with their server at any given time, they face
+                    unprecedented engineering challenges associated with their scale. What may seem like tiny server-side
+                    decisions—how often to refresh your timeline or suggest new friends—can have tremendous impact with
+                    regard to data usage and the site’s overall responsiveness.
+                </p>
+                <p>
+                    So far, everything we have discussed assumes that your computer is connecting to and receiving
+                    information using the standard HTTP protocol. A crucial thing to understand about the internet is that
+                    the ways you can interact with it from your browser are inherently limited. You can send and receive
+                    requests and information, but, as a client, this is the limit of your control. You are trusting that
+                    your information reaches its intended destination without being altered by a third party. You are also
+                    trusting that the source of the information you receive is, in fact, the party you think you are
+                    connecting to. This necessity to trust can put you in a position of vulnerability.
+                </p>
+                <p>
+                    Internet Security: So, you may ask, how do I know that the information that I’m sending over the
+                    internet isn’t being read by people I don’t intend? How do I know that I’m receiving information from
+                    the source that I think? The short answer is encryption.
+                </p>
+                <p>
+                    The original versions of the internet using HTTP faced a few major security risks. Anyone within a
+                    network could perform a few kinds of basic hacks and see all the data being transmitted, including
+                    passwords, banking information, or any other personal data that a user might not want to broadcast
+                    publicly. Additionally, the data transmitted via unencrypted HTTP was not authenticatable. In other
+                    words, senders could not be certain of the identity of their recipient, nor could they be sure of the
+                    source of any data they received. This made users vulnerable to intercepted communications or
+                    redirection to nefarious websites which might serve malware or other viruses.
+                </p>
+                <p>
+                    As a response to these security issues of privacy and authenticity, researchers developed protocols for
+                    establishing encrypted, verifiable connections between clients and servers. The first version of this
+                    protocol was called SSL, Secure Sockets Layer. The current standard is a similar but improved protocol
+                    called TLS, Transport Layer Security. A connection that has been established using TLS will have a
+                    different prefix to its URL, https:// (for Hypertext Transfer Protocol Secure) rather than the standard
+                    http://. Your browser is also conveniently designed to make you aware when it has established a secure
+                    connection, like the one to this website. At the left side of your browser’s address bar, there will be
+                    an image of a padlock, the word “secure,” or some combination of the two (the presentation varies by
+                    browser). HTTPS is simply an exchange of HTTP requests and responses, as described above, but via a
+                    connection that has been secured through TLS. But how does this process actually secure your
+                    information? And how does the encryption work?
+                </p>
+                <p>
+                    In the previous section, we discussed how your computer and a website’s server establish a connection
+                    via a TCP handshake before exchanging HTTP requests. Secure connections execute the extra protocol,
+                    TLS, between these steps. This essentially extends the handshake process with an exchange of additional
+                    information related to identity and cryptography. The TLS handshake is intended to establish that the
+                    two parties are who they claim to be, and defines how they will encrypt/decrypt the information they
+                    exchange.
+                </p>
+                <p>
+                    The encryption is done through a process called Public Key Cryptography. This is a dual
+                    encryption-authentication system that relies on the parties each having two digital keys. One of the
+                    keys is public, which the owner shares openly and disseminates to any other entity that requests it.
+                    The other key is private, a secret which is shared with no one else. The keys are complimentary such
+                    that a message encrypted with Bob’s private key can only be decoded with Bob’s public key, and vice
+                    versa. No one without the unique key pair can decrypt the content—to any third party, the contents of
+                    an encrypted message are meaningless gibberish. This scheme also provides a means to verify the
+                    identity of an interlocutor. An encrypted message which can be successfully decrypted with Bob’s public
+                    key can only have been sent by Bob. He holds the only matching pair.
+                </p>
+                <p>
+                    As an example, if you are connecting securely to Facebook, then Facebook shares its public key with
+                    you, and you share your public key with Facebook during the TLS handshake. When exchanging information,
+                    your browser encrypts any messages that you send to Facebook with their public key and your private
+                    key. Facebook then uses their private key and your public key to decrypt the message. This ensures that
+                    you were the sender and that no middle man without their private key could have read or tampered with
+                    it. In turn, any information that Facebook sends back to you is encrypted with their private key and
+                    your public key, which your browser can then decrypt in the opposite way.
+                </p>
+                <p>
+                    Practically speaking, Public Key Cryptography (also called Asymmetrical Cryptography, because the two
+                    keys are different) is slow for computers to implement. Encrypting and decrypting the messages
+                    asymmetrically requires complex math that consumes lots of your computer’s processing power. This is
+                    not to mention the energy required of the server, which is potentially encrypting and decrypting
+                    millions of messages at once. To avoid this problem, the client and server generally agree during the
+                    TLS handshake on a computationally simpler “session key.” This is the same for both parties
+                    (‘symmetrical cryptography’), requires less computationally intensive processing, and thereby speeds
+                    communication. Your browser encrypts information with the key, and the server you are trying to reach
+                    decodes the message with the same key. However, because the session key was determined using Public Key
+                    Cryptography, the communication remains just as secure.
+                </p>
+                <p>
+                    Beyond encryption, TLS also provides another service that is paramount to internet security: identity
+                    verification. When a server shares its public key during the TLS handshake, it also sends a digital
+                    certificate of authenticity attesting that it is, in fact, the real public key of www.facebook.com—the
+                    multinational company incorporated in Menlo Park, CA. This certificate is crucial to ensure that you
+                    are not accidentally establishing an encrypted connection with a malicious imposter who would then
+                    solicit you for your Facebook username and password.
+                </p>
+                <p>
+                    Digital certificates are “signed” by one of a number of trusted third party organizations called
+                    Certificate Authorities. Essentially, the service they provide is trustworthiness. They vet businesses
+                    and organizations who want to provide secure connections for their website’s users and then vouch for
+                    their legitimacy. A website owner seeking a certificate will provide a Certificate Authority with
+                    extensive real-world information about their organization, including addresses, corporate
+                    documentation, and evidence that they own the website. The Certificate Authority will only issue them a
+                    signed certificate them once being sufficiently convinced of their bone fides. Your browser comes with
+                    a pre-installed list of trusted Certificate Authorities, which allows it to recognize certificates that
+                    they endorse.
+                </p>
+                <p>
+                    If you have established a secure connection and are browsing via HTTPS, you can click on the ‘lock’
+                    icon in the address bar and view information about the certificate issued by the site you are currently
+                    visiting. This will include at least the name of the issuing Certificate Authority, and may also
+                    include the name of the website owner, its country of origin, server location, and other information.
+                    Try it!
+                </p>
+                <p>
+                    As a way to safeguard your security, most browsers will not move forward with a secure connection
+                    unless it recognizes
+                    the digital certificate signature. If you have spent much time surfing the web, it is likely that you
+                    have encountered
+                    a frightening error page from your browser informing you that “The site’s security certificate is not
+                    trusted” (if you
+                    are using Google Chrome), or “This connection is untrusted” (from Mozilla). These messages are meant to
+                    inform you that
+                    the browser cannot independently verify the identity or trustworthiness of the site you are trying to
+                    visit. This may
+                    simply be because your browser does not yet contain information about the signing Certificate
+                    Authority, and the site
+                    has no malicious intent.
+                </p>
+                <p>
+                    However, your browser may be trying to steer you away from nefarious websites. Consider this scenario:
+                    you try to visit
+                    www.badidea.com and your browser makes a secure request to connect. Somehow, you are redirected to a
+                    server that does
+                    not actually belong to www.badidea.com. That fake server issues a certificate claiming that it is, in
+                    fact,
+                    www.badidea.com, and your browser displays the aforementioned warning. If you ignore this warning that
+                    the certificate
+                    is not trusted, you could end up sending private information to the server, or unintentionally
+                    downloading viruses or
+                    spyware. Especially if trying to connect to a site that you normally visit without a problem, it is
+                    generally a good
+                    idea to heed the browser’s warnings in situations such as this.
+                </p>
+                <p>
+                    Again, stop and take a minute to appreciate how amazing it is that your computer can do all of these
+                    things in the
+                    blink of an eye when you type in a website and it connects securely: (1) request and receive the site’s
+                    IP address via
+                    DNS, (2) exchange three messages to establish a connection via TCP, (3) exchange and verify Public keys
+                    and digital
+                    certificates through TLS, (4) request and download megabytes of website content using HTTP, and (5)
+                    potentially do this
+                    many times over to render the site’s full content.
+                </p>
+                <p>
+                    Also, feel free to appreciate that you now know what happens when you refresh your Facebook timeline,
+                    or go to Tech
+                    Junkie’s homepage to read more awesome articles. Thanks for reading!
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!--FOOTER-->
+    <div id="footer">
+        <div id="center" class="column placeholder-box col-xl-3"></div>
+        <div id="center" class="column col-xl-3 col-l-4 col-m-4 col-s-7">
+            <h3>interesting</h3>
+            <p>Congratulations! You've found the personal website of Thomas Graham. I'm originally from Raleigh, North Carolina and now make home in San Francisco.
+                    For more information about me and about this site, please see my <a href="../about.html">about</a> page.
+                </p>
+        </div>
+        <div id="center" class="column col-xl-3 col-l-4 col-m-4 col-s-7">
+            <h3>available</h3>
+            <div class="social-list">
+                <a id="facebook" href="https://www.facebook.com/thomas.graham.756/" alt="Thomas Graham's Facebook Page"
+                    title="Thomas's Facebook Page">
+                    <img src="../images/f-Logo_Assets/F_Logo_Online_09_2018/White/SVG/flogo-HexRBG-Wht-512.svg">
+                </a>
+                <a id="instagram" href="https://www.instagram.com/picsbytgraham/" title="He once had an Instagram, too...">
+                    <img class="col-12" src="../images/GlyphLogo_May2016_Onlinev2/Insta_purple.png">
+                </a>
+                <a id="twitter" href="https://twitter.com/tgthepastaman" alt="Thomas Graham's Twitter Account." title="Thomas Graham's Antiquated Twitter">
+                    <img class="col-12" src="../images/Twitter Logos/Twitter Logos/Twitter_Logo_Blue/Twitter-Logo-Purple.png">
+                </a>
+                <a id="linkedin" href="https://www.linkedin.com/in/thomas-graham-b23934130/" alt="Thomas Graham's LinkedIn Page"
+                    title="My LinkedIn Page">
+                    <img class="col-12" src="../images/linkedin_brand_package/Linkedin.png">
+                </a>
+            </div>
+            <br>
+            <ul>
+                <li>Find me in SF's beautiful <a href="https://goo.gl/maps/qqmFcuEKcDT2">Lower Haight</a></li>
+                <li>Or at <a href="http://beanbag.cafe/">various</a> <a href="http://www.neighborscornersf.com/">internet</a>
+                    <a href="http://www.streamlinesf.com/">cafes</a></li>
+                <li>The literarily inclined can <a href="mailto:graham.thomask@gmail.com?Subject=I%20hate%20your%20website">email
+                        me</a></li>
+                <li>(Don't call me - it's 2018)</li>
+            </ul>
+        </div>
+        <div id="center" class="column col-xl-3 col-l-4 col-m-4 col-s-7">
+            <h3>honest</h3>
+            <p id="bottom-footer-p">
+                This website was made by me. I did so by taking some <a href="mozilla website" alt="Mozilla's learning website.">
+                    online courses</a> through
+                Mozilla Firefox's delightful website.
+                I also looked through some templates from <a href="bootstrap templates" alt="
+                            bootstrap templates website">Bootstrap
+                    Templates</a> and <a href="the holy grail" alt="A website design blog.">The Holy Grail</a> (a real
+                site, I
+                know) to see
+                how real live websites were made in the real live world. I borrowed some of
+                their ideas.
+            </p>
+        </div>
+    </div>
+    <div class="small-footer">
+        <div class="column placeholder-box col-xl-3"></div>
+        <p class="column col-xl-9">© 2018, TKG Enterprises, LLC. All rights reserved. Not liable for anything. |
+            <a href="https://app.termly.io/document/privacy-policy/e9612db4-7e59-4bdb-a0be-d9635f33f77b">Privacy Policy</a>
+            |
+            <a href="../disclaimer.html">Scary Legal Disclaimer</a>
+            |
+            <a href="https://www.bojangles.com/">Delicious Biscuits</a>
+
+        </p>
+    </div>
+    <div class="to-top">
+        <a href="#main_menu"><img src="../images/to-top-black.png"></a>
+
+    </div>
+    <!--FIN DE FOOTER-->
+</body>
+
+</html>

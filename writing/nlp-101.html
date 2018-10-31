@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>TKG Writing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="DESCRIPTION HERE">
+    <link rel="shortcut icon" href="../images/home-icon-4.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Spectral" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    <link rel="stylesheet" type="text/css" href="../responsive.css">
+</head>
+
+<body>
+    <!--HEADER-->
+    <div id="main_menu"></div>
+    <header class="navbar-fixed-top">
+        <a class="navbar-brand" href="../index.html">
+            <img src="../images/home-icon.png" alt="My home icon.">
+        </a>
+        <div class="overflow-protection">
+            <ul class="navbar-right">
+                <li>
+                    <a href="../about.html">about</a>
+                </li>
+                <li>
+                    <a href="../wood.html">wood</a>
+                </li>
+                <li class="current">
+                    <!--LEFT BORDER ON CURRENT PAGE-->
+                    <a href="../writing.html">writing</a>
+                </li>
+                <li>
+                    <a href="../places.html">places</a>
+                </li>
+                <li>
+                    <a href="../running.html">running</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <!--FIN DE HEADER-->
+
+    <div class="main-content">
+        <div class="flex-box">
+            <div id="center" class="column">
+                <h1>Under the Hood with Siri: Natural Language Processing 101</h1>
+                <p><em>August, 2018<br>An article I wrote for a tech website when freelancing.</em></p>
+                <p>The past few years have seen a boom in the popularity of smart speakers and personal assistant
+                    technology. Products like the Amazon Echo and Apple HomePod are flying off the shelves. Siri and
+                    Alexa, the software engines that power these devices, have become cultural fixtures because of
+                    their seemingly magical functionality à la 2001: A Space Odyssey. Prompted by just a brief voice
+                    command, they can figure out what their user wants—to retrieve some information, send messages,
+                    even make purchases—provide it, and then respond intelligently in a pleasant voice. The user
+                    experience for these devices have been painstakingly engineered to be as natural and rewarding as
+                    possible. Who doesn’t want that?</p>
+
+                <p>As it turns out, quite a few people. These personal assistants remain mired in controversy because
+                    of concerns about their impact on privacy. New articles crop up on a regular basis alleging that
+                    the increasing pervasiveness of capable and always-active personal assistants is speeding the
+                    arrival of Big Brother. But whether positive or negative, relatively few articles discuss how
+                    systems like Siri and Alexa actually work. This is a shame, because recent advancements in the
+                    technology powering personal assistants—collectively referred to as Natural Language Processing—are
+                    among the most exciting and widely useful in Artificial Intelligence to date. In this article, we
+                    will look at several of the ingenious processes that make this technology work. Gone are the days
+                    of monotonous Microsoft Sam.</p>
+
+                <p>Natural Language Processing (from now on, NLP) is not one technology, but a field. At its core,
+                    this branch of Artificial Intelligence strives to bridge the gap between the way that humans
+                    communicate and how computers process information. “Natural Language” is a language that humans use
+                    to communicate, like English or Arabic. Humans have a wide variety of effective communication
+                    methods that leverage natural language—primarily voice and text, but also facial expressions and
+                    gestures. We intuitively understand context and intonation. Computers, on the other hand, struggle
+                    mightily with these tasks. They must be programmed via “artificial language” (long strings of 1s
+                    and 0s) which ultimately define electronic activity on a circuitboard. The vast difference in these
+                    communication styles mean that several layers of clever processing are required to turn natural
+                    language into actionable commands for a computer, or vice versa. The algorithms that comprise these
+                    intermediate layers constitute NLP.</p>
+
+                <p>Depending upon the application, the appropriate type of processing varies drastically. It has
+                    several subfields, sub-problems, and myriad algorithms to address each issue. Some of these involve
+                    only text processing, some vocal speech, and some both. A few common applications include: </p>
+
+                <ul>
+                    <li>Email Spam: Analyzing email subject lines and text to filter out junk;</li>
+                    <li>Algorithmic Trading: Analyzing news stories and textual information about companies to decide
+                        whether to buy, sell, or hold;</li>
+                    <li>Search Results Optimization: Learning what results a user really wants to find, even though
+                        they
+                        may type in something different;</li>
+                    <li>Social Listening: Analyzing social media posts, reviews, and comments to determine public
+                        sentiment about a topic;</li>
+                    <li>Epidemic Tracking: Analyzing search queries and other computer activity to determine the
+                        prevalence of symptoms in some region;</li>
+                    <li>Translation: Given some text or audio in one language, delivering an accurate translation to
+                        another;</li>
+                    <li>Dictation: Transcribing a user’s speech to text;</li>
+                </ul>
+
+                <p>And the list goes on. As mentioned, the goal of this article is to explain several of the
+                    algorithms and processes that are common to the applications listed above. Because NLP is such a
+                    diverse field, we will ground our discussion with the particular use case of Siri. It is
+                    particularly well-known and also applies a suite of common NLP techniques. From the time a user
+                    activates Siri, there are four main steps that follow: </p>
+
+                <ol>
+                    <li>Speech-to-Text: audio of the user’s speech is transcribed into text;</li>
+                    <li>Text Interpretation: the text is analyzed for meaning and actionable commands/information;</li>
+                    <li>Executing Commands: Siri executes commands, runs programs, or submits queries based on the
+                        information gleaned in step 2; and</li>
+                    <li>Text-to-Speech: Siri issues a vocal response or confirmation to the user, or prompts for
+                        further
+                        information.</li>
+                </ol>
+
+                <p>We will delve into the processes involved in executing each of these steps in further detail below.
+                    But before going under the hood, a bit of background about the field of NLP as a whole.
+                </p>
+                <h3>Background</h3>
+                <p>Researchers have been imagining and theorizing about the possibility of machines understanding and
+                    responding to human speech for well over 50 years now. As computer processing power and algorithms
+                    have drastically improved, so have the feasibility and functionality of language processing
+                    systems. The general trend has been from rigid systems that can handle small vocabularies towards
+                    flexible and robust statistics-based systems with huge vocabularies and the possibility to handle
+                    unforeseen cases.</p>
+
+                <p>In terms of text processing, early research by IBM resulted in the automatic translation of 60
+                    sentences from Russian to English in the early 1950s. However, subsequent experiments by the group
+                    showed little new progress, and funding for the topic was withdrawn. A major shortcoming of these
+                    early researchers’ algorithm was its reliance on hard-coded rules to produce the translations (i.e.
+                    if X, then Y; if the program encountered “cat,” it would translate to “gato”). This approach was
+                    impractical due to the changing nature of language, and the need to recode thousands of different
+                    rules for any new language being supported. Hard-coded rules also make it more difficult to handle
+                    words that can have several meanings based on context. Boosting the accuracy of such a model would
+                    require its designer to add many new layers of rules, each to handle a different context (i.e. if X
+                    and Y and Z, then Q; if the program encounters “cat,” but the word prior was “cool,” the sense of
+                    the word would be different). Such programs are slow and have a massive data and labor overhead.
+                </p>
+                <p>
+                    The first statistical text translation systems were developed in the late 1980s and provided many
+                    of the benefits that hard-coded systems lacked. They are more flexible, easier to develop and
+                    modify, and able to handle unforeseen circumstances. Rather than having hard-coded rules, they
+                    worked by analyzing large databases of pre-translated material to develop an index of translation
+                    probabilities. This allowed the systems to handle context and multiple word meanings based on the
+                    information fed into the model. It also allowed new languages to become supported quickly by using
+                    different translation databases. A similar approach is used for many modern NLP tasks, which we
+                    will discuss in more detail below.
+                </p>
+                <p>
+                    Research on automatic speech recognition also produced its first results in the 1950s. Researchers
+                    at Bell Labs used the average frequency of audio recordings to recognize the digits from 1-10. The
+                    next improvement came from the USSR in the late 1960s, an algorithm that divided a speech input
+                    signal into brief segments of ~10ms to recognize parts of individual words. This method of breaking
+                    words up into constituent parts has persisted to the present. The 1960s also saw the invention of
+                    Hidden Markov Models, a revolutionary statistical technique for predicting some unknown factor,
+                    like what word a person said, based on an observable factor, like the frequencies of their voice.
+                    However, HMMs take a substantial amount of computing power and in the 1970s, computers were not
+                    nearly fast enough to do speech recognition at any real-world applicable rate: 100 minutes of
+                    processing were required to decode just 30 seconds of speech. Improved computing power now allow
+                    such models to run in real time with additional functionality like background noise reduction,
+                    individual speaker recognition, and more. In the past 10 years, artificial neural networks with
+                    various modifications have led to the most dramatic improvements in recognition accuracy.
+                </p>
+                <p>
+                    Understanding Siri and other NLP tasks also requires some brief background into how machines
+                    interpret sound. In the real world, sound moves in continuous waves. Computers, however, can only
+                    process audio information digitally, as a series of numerical samples. Their microphones take
+                    thousands of frequency measurements each second and use them to approximate a description of the
+                    analog sound waves. The important thing to keep in mind is that sound, to a computer, is
+                    essentially a long string of numbers.</p>
+
+                <h3>Activation</h3>
+
+                <p>With that background, on to explore how Siri works. Sequentially, the first thing to consider is
+                    how to actually turn Siri on. Obviously you can activate it manually, but on iOS 8 and later, users
+                    can also say “Hey Siri…” to activate Siri remotely. Siri is able to conveniently identify those two
+                    words (“Hey Siri”) and wake up to receive further instructions, without taking action the rest of
+                    the time. This touches upon one of the more controversial aspects of digital personal
+                    assistants—the idea that they are always listening to what we say and then storing it or taking
+                    action that we did not intend. However, the design of these activation systems is intended to
+                    create distance between the main program and the always-on recorder, whose functionality is
+                    severely limited. Siri is programmed neither to care or be able to interpret what you say unless
+                    that utterance has been preceded with the activation phrase. </p>
+
+                <p>The system for recognizing the “Hey Siri” prompt is an ingenious two-tiered approach (and
+                    surprisingly well-described thanks to Apple’s Machine Learning Journal). The phone’s microphone
+                    takes continuous audio samples of its environment (16,000/second) which are then aggregated into
+                    larger samples of 0.2 seconds. Keep in mind that that the data in that larger sample is essentially
+                    a series of 1s and 0s that can describe 0.2 seconds of audio when interpreted correctly. Apple has
+                    also compiled roughly 20 sound “classes” that the 0.2 seconds of audio can fall into, only some of
+                    which correspond to the “Hey Siri” phrase. The microphone data becomes the input to a Deep Neural
+                    Network (DNN), an extremely sophisticated statistical model. Its output is the range of
+                    probabilities that the audio intake data belongs to any one of those 20 classes. </p>
+
+                <p>The ingenious part of the schema is that the DNN modeling actually takes place twice. iPhones
+                    have
+                    a main processor and a small “Always On Processor” for running low-power background tasks.
+                    Rather
+                    than having the power-consumptive main processor on at all times to listen for the “Hey Siri”
+                    command, the efficient auxiliary processor connects to the microphone to run a simplified
+                    version
+                    of the detection algorithm. A small proportion of this secondary processor is reserved to run
+                    the
+                    voice detector for Siri, with a simplified, less computationally intensive DNN. If the
+                    auxiliary
+                    system registers a high enough probability that the audio included part of “Hey Siri,” the
+                    auxiliary processor wakes up the main processor, which runs a larger and more accurate DNN
+                    model to
+                    confirm the first result. The first, simplified process can take place using just the phone’s
+                    processing power while the verification, like the rest of Siri’s functionality, requires access
+                    to
+                    the Cloud. This two-chip approach is now common to the industry (Amazon’s Alexa takes a similar
+                    approach) and helps ensure that personal assistants work only the way that users intend.</p>
+
+                <h3>Speech to Text</h3>
+
+                <p>Once Siri is activated, either manually or through the “Hey Siri” process, the first major step
+                    is
+                    to determine what textual words its user has said. This is accomplished by comparing the audio
+                    intake from the user with a large database of prerecorded, labeled speech components.
+                </p>
+                <p>
+                    The database is a crucial part of the recognition program. It is created from hundreds of hours
+                    of
+                    prerecorded speech which are then broken down into words, syllables, and phonemes. (Phonemes
+                    are
+                    the most fundamental units of vocal sound, the audio equivalent of letters; there are 44 in the
+                    English language.) In order to handle diverse speakers with a variety of intonations,
+                    pronunciations, and paces of speech, many samples of each phoneme are taken. These can be
+                    averaged
+                    out to create a statistical representation of the likely frequency recordings associated with
+                    each
+                    phoneme. For the system to function, each phoneme in the database also needs to have several
+                    other
+                    important labels. These include possible corresponding letters (the “f” sound in “fun” might
+                    correspond to the letter F 90% of the time, but also to PH in 10% of cases) and the probability
+                    that they would be adjacent to any other phoneme. All this probability data—that a certain
+                    audio
+                    recording is associated with a certain phoneme, and that one phoneme is adjacent to any
+                    another—is
+                    required to extract text from speech audio.
+                </p>
+                <p>
+                    When a user gives the Siri program an audio command, it turns that audio into a series of
+                    phoneme-length segments (10-20ms). That digital audio data then becomes the input for an
+                    algorithm
+                    that matches up the recording with the most likely sequence of phonemes and associated letters
+                    from
+                    the database. A common method for this is the Hidden Markov Model mentioned above, which allows
+                    observed data (like audio frequencies) to predict unknown information (like the words
+                    associated
+                    with that audio). For the sake of explanation, say that Siri registers 5 frequencies of your
+                    voice
+                    at 5 instants, and that each of those are associated with one syllable of a word. (This is a
+                    substantial simplification of the process, but serves to explain the HMM in action.) As
+                    mentioned
+                    above, the program has access to a huge database of annotated syllables. Each recorded
+                    frequency
+                    has a probability of being associated with each syllable. Each syllable in the database also
+                    has a
+                    probability of being followed by each other syllable. For the 5 frequencies recorded from the
+                    user,
+                    there is some combination of 5 syllables from the database (hopefully, forming a recognizable
+                    word)
+                    that maximizes the probabilities of each recorded frequency being associated with a syllable,
+                    and
+                    also of those syllables sequentially following one another. Checking the text output against a
+                    dictionary allows the system to determine if the most likely solution produced by the model was
+                    a
+                    reasonable one, or whether changes are necessary. Edits would involve the system choosing the
+                    second or third most likely output until a valid one was reached.
+                </p>
+                <p>
+                    Another example may help to illustrate the power of this approach. Consider a one-phoneme audio
+                    input from the user. Without contextual information about adjacent sounds, the program would
+                    search
+                    its database to find the audio profile of the phoneme that was most likely to match the input.
+                    This
+                    would be associated with some textual letter(s). However, there is a reasonable chance that the
+                    phoneme retrieved was not the correct one, especially if it was one of several consonants—the
+                    “b”
+                    and “p” sounds, for example—which are easily confusable even by humans. The similarity of their
+                    audial profiles in the reference database make this even more difficult for computers. But
+                    factoring in the likelihood of certain sounds following one another, as the HMM does, greatly
+                    reduces the chances of making such an error. Say the system determined that a user’s input
+                    ended in
+                    “–ecause” and also that the first sound was a “p.” It would check and quickly realize that
+                    “pecause” is not a word, but because “p” and “b” are so similar, find “because” to be a likely
+                    and
+                    valid alternative.
+                </p>
+                <p>
+                    This approach is repeated for the entire length of a user’s command until a complete series of
+                    recognizable words have been produced. Some modern speech recognition systems have now replaced
+                    the
+                    HMM algorithm with a model based on artificial neural networks. However, as described above,
+                    the
+                    neural network is just a more sophisticated statistical model with the same goal—to map a
+                    user’s
+                    audio input, which initially has no interpretable meaning to a computer, to meaningful text
+                    that
+                    the system can begin to associate with actionable information and intent. Determining what
+                    action
+                    the user might want Siri to take based on those words is the next step in the process.
+                </p>
+                <h3>Text Interpretation</h3>
+                <p>
+                    Once Siri has determined the likely textual representation of the user’s voice command, the
+                    system
+                    has to glean information from those words and determine what action to take. For example, say
+                    that
+                    Siri determined that a user’s request was to “Show me pictures of a bat.” At the beginning of
+                    this
+                    process, those words have no inherent meaning to the program. But by the end, Siri will
+                    recognize
+                    that it should perform an online image search, and that the user is interested to see photos of
+                    a
+                    furry flying mammal.
+                </p>
+                <p>
+                    The first part of this process is a part of speech analysis which denotes each of the words as
+                    a
+                    noun, verb, adjective, adverb, etc. This analysis is performed with a version of the Hidden
+                    Markov
+                    Model where the unknown information is the part of speech. Each word’s possible parts of
+                    speech,
+                    their relationships to each other, and the tendency of certain parts of speech to follow others
+                    (i.e. verbs come after nouns 35% of the time) are all known. The model uses this information to
+                    determine the most likely parts of speech sequence for a sentence. (see diagram)
+                </p>
+                <p>
+                    In the example above (“Show me pictures of a bat”), “bat” can be both a noun and a verb. But
+                    “bat”
+                    when preceded by the word “a” will nearly always require “bat” to be a noun—the probability
+                    used
+                    for the HMM will be very high. Similarly, “show” can be a noun or a verb, but it is very likely
+                    to
+                    be a verb when followed by “me” because “me” receives the action of the verb. Siri would not
+                    understand that reasoning, of course, but would make the same determination based on a large
+                    body
+                    of statistical information.
+                </p>
+                <p>
+                    The type of model that provides this statistical information is called an N-gram. These are
+                    series
+                    of items used to predict the next item in a sequence. It may be the next word in a text, the
+                    next
+                    letter in a word, or the next phoneme in audio clip. N-grams are so named because N represents
+                    the
+                    number of units used to complete predictions. A 2-gram of words, for example, would predict the
+                    third word based on the most common word following the given two-word sequence. It might
+                    predict
+                    that the most likely word to follow “once upon” would be “a,” for example, because of the
+                    phrase’s
+                    common usage in storybooks (“once upon a time…”). The probability of such occurrences are
+                    generally
+                    created by analyzing a huge corpus of material—in the case of text, billions or even trillions
+                    of
+                    words from diverse sources. The many gigabytes that comprise a typical N-gram database are one
+                    main
+                    reason that most language processing software must be connected to the internet in order to
+                    function: it would be impractical to store so much data on any mobile device.
+                </p>
+                <p>
+                    Part of speech analysis, naturally, uses N-grams of parts of speech. A noun then a verb might
+                    be
+                    followed by a preposition 20% of the time, an adverb 40%, etc. Many words only have one
+                    possible
+                    part of speech, which gives the model a strong starting point. Aligning these percentages with
+                    the
+                    possible parts of speech in a user’s query allows for highly accurate part of speech
+                    determinations.
+                </p>
+                <p>
+                    Siri then uses the parts of speech information and a hard-coded list of grammar rules to
+                    determine
+                    the relationships among the words in the sentence. This allows the system to determine what
+                    actions
+                    it will need to take, which apps or programs it must run, and what information it should feed
+                    into
+                    those programs.
+                </p>
+                <p>
+                    To return to the example command above, “Show me pictures of a bat,” the verb “show” indicates
+                    that
+                    some information or media should be produced for the user. This would be associated with a
+                    possible
+                    list of applications or searches to run that was predetermined by the device’s engineers.
+                    English
+                    grammar rules about word order, verbs, and direct objects indicate that “pictures” are what
+                    should
+                    be shown. This narrows down the list of potential information-retrieval operations to ones
+                    involving images—maybe, a search of one’s photo library or an online image search. Grammar
+                    rules
+                    also dictate that “pictures” and “bat” are related because they are connected with “of a.” This
+                    helps Siri determine that the pictures the user is interested in are of a bat rather than of,
+                    say,
+                    “me” (another noun in the sentence). Interestingly, the fact that Siri then produces photos of
+                    a
+                    winged mammal rather than a wooden baseball implement or an angry old woman is actually not due
+                    to
+                    Apple’s language processing program, but to its information retrieval implementation.
+                </p>
+                <h3>Executing Commands</h3>
+
+                <p>Siri can do math. Siri can remember your relationships to contacts, make reservations, even
+                    find
+                    airplanes that are flying above you. It can act upon queries relating to default apps like
+                    locations (“Find my friends”), calls/voicemails (“Did Dad call me?”), calendar (“reschedule
+                    my 5PM
+                    appointment to 5:30”), and music (“When did the last Beatles album come out?”). However,
+                    most of
+                    the amazing results that the system can produce are external to natural language
+                    processing—even
+                    external to the Siri application. The speech and text processing steps above are meant to
+                    determine
+                    a user’s possible intent, and then break out their request into information that can be fed
+                    into
+                    other applications or external services in order to retrieve results. Those secondary
+                    applications
+                    may or may not use other NLP algorithms to complete the request.
+                </p>
+                <p>
+                    For example, a user can ask Siri what song is playing and get an answer, but only because
+                    Siri can
+                    access the Shazam app, and understands to run it when this or a similar request is made.
+                    Siri can
+                    do complicated math and translations thanks to Wolfram Alpha and retrieve specific sports
+                    results
+                    from Yahoo! Sports. Regarding the last Beatles album, it would search Apple Music’s
+                    database of
+                    albums for this information. In the example from the previous section (“Show me pictures of
+                    a
+                    bat”), Siri might automatically perform a Google search for images of a bat, and then
+                    return those
+                    results. Why use Google? Because of a contract where they pay Apple several billion dollars
+                    per
+                    year for that honor. Most queries that do not directly relate to an application or
+                    device-related
+                    command are formatted into an internet search. In the same way that Google does, Siri can
+                    sometimes
+                    provide excerpts from the top section of Wikipedia articles. None of this is to say that
+                    Siri’s
+                    ability to initiate and coordinate these actions is not remarkable—it still has to identify
+                    and
+                    feed information into those applications—but it is worth knowing where the information is
+                    actually
+                    retrieved from.
+                </p>
+                <p>
+                    Through its connections to other applications, Siri sends requests for information or
+                    commands to
+                    execute some action. The final step in this process is for the system to confirm that it
+                    has
+                    completed its task, and to present its results in some nicely pre-formatted way. It is the
+                    confirmation process, specifically Siri’s vocalization of the results, that we will cover
+                    in the
+                    final section.
+                </p>
+                <h3>Text to Speech</h3>
+                <p>
+                    Having determined what the user’s request meant and acted upon it, Siri responds to the
+                    user to let
+                    them know the system is “Calling Dad…” or has retrieved several results from the web. This
+                    confirmation creates a more natural, human-like interaction. It is nicer from a user
+                    experience
+                    standpoint to issue a request and hear back some response rather than to have the computer
+                    take
+                    action without reporting back what the action was.
+                </p>
+                <p>
+                    This response relies on text to speech (TTS) technology, which by itself is a huge field of
+                    research. It can be viewed as the opposite process of Speech to Text: given some
+                    information stored
+                    in machine language, conveying the same information in natural language. Whereas the major
+                    challenge in Speech to Text is dealing with the wide variety of human voices and
+                    communication
+                    styles, TTS systems primarily struggle with replicating the inflection, cadence, and
+                    overall sound
+                    of human speech.
+                </p>
+                <p>
+                    For common personal assistant processes like completing calls or adding an event to the
+                    calendar,
+                    TTS can be a much simpler process than Speech to Text. Siri will confirm that such tasks
+                    have been
+                    completed using the same words and intonation each time. The structure of these phrases can
+                    be
+                    hard-coded (“timer set for X minutes…”), so there is less need to handle all the
+                    uncertainty and
+                    variability that humans introduce in their spoken communication. This would be true for the
+                    majority of Siri’s simple, canned responses.
+                </p>
+                <p>
+                    However, the NLP engine that powers Siri also frequently has to handle less familiar
+                    situations
+                    like reading emails aloud to the user, or speaking road and place names. This is where the
+                    system
+                    must have the ability to determine syllable stress in unfamiliar words, and word inflection
+                    in
+                    unfamiliar sentences.
+                </p>
+                <p>
+                    Apple’s TTS system relies in part on a method called Unit Selection Synthesis. In this
+                    popular
+                    approach, several precisely-chosen speech components (“units”) are concatenated together
+                    from a
+                    massive database of options to make complete words and phrases. As with the databases for
+                    speech
+                    recognition, a Unit Selection database relies on dozens of hours of recorded speech which
+                    is then
+                    segmented into phonemes, syllables, words, and longer phrases. Each entry in the database
+                    is
+                    indexed based on multiple factors like associated letters, acoustic features, frequency,
+                    word
+                    position, nearby phonemes, and more. Apple’s complete database has over a million possible
+                    units
+                    (the specific number varies by language) and is intended to represent the full variety of
+                    possible
+                    utterances.
+                </p>
+                <p>
+                    The vast number of possible units and the variety in language make it a complex task to
+                    choose the
+                    best series of speech units. Apple’s TTS model uses a four-step approach, with all aspects
+                    of the
+                    text input (such as phoneme identity and positional factors) represented numerically. It
+                    first
+                    performs a text analysis similar to the one above to determine parts of speech and word
+                    relationships. It then does a second round of analysis to assign inflection and syllable
+                    length to
+                    the text. Intonation might rise, for example, at the end of a questioning phrase. Like the
+                    “Hey
+                    Siri” program, these first two steps are accomplished using a Deep Neural Network which
+                    learns to
+                    predict speech features even with text input that the model has never seen before.
+                </p>
+                <p>
+                    With the annotated text data in hand, the selection process then introduces a further layer
+                    of
+                    complexity. The actual units selected depend upon their similarity to the intended speech
+                    features
+                    and the difficulty of concatenating the various units together. These two factors are each
+                    assigned
+                    a score which the selection program strives to minimize. An algorithm based off the Hidden
+                    Markov
+                    Model is used to select the optimal series of units to represent the text, which finally
+                    are
+                    assembled and read aloud to the user. Just like that, Siri has read you the contents of
+                    your most
+                    recent Notes page.
+                </p>
+
+                <h3>Siriusly?</h3>
+                <p>It is little short of incredible that Siri can do all these things for you so quickly,
+                    all in just
+                    a few seconds. But even given all this amazing technology, NLP is still far from
+                    perfect. A
+                    significant portion of dictations are still (annoyingly) incorrect, Siri often takes
+                    the completely
+                    wrong action, and there are many types of queries that it still cannot handle well.
+                    Anyone who has
+                    asked Siri complicated or subjective things—try “what is the meaning of life?”—knows
+                    that you get
+                    joking, unsatisfactory answers. The system and its engineers clearly realize their
+                    limits in these
+                    scenarios. Hopefully, having some notion of how Siri and similar systems work will now
+                    help you
+                    understand where these limitations may lie.
+                </p>
+                <p>
+                    Alan Turing, the outstanding British computer scientist, published a paper in 1950
+                    wherein he
+                    proposed his famous “Turing Test” for artificial intelligence. A computer and a human,
+                    neither of
+                    whom divulge any indication of their real identity, both try to convince an isolated
+                    human judge
+                    that they are human. (This game is the namesake of the recent film about Mr. Turing,
+                    The Imitation
+                    Game.) If the judge cannot consistently make the right choice, the computer has won the
+                    game—it can
+                    communicate in all the ways that a human would be expected to. Despite all its amazing
+                    functionality, it is clear that Siri and our other natural language applications cannot
+                    yet pass
+                    this test. The less-than-natural quality of their voice and persistent roboticism of
+                    many responses
+                    keep them from doing so. Siri may someday be able to meet our needs for companionship,
+                    but for now,
+                    “call Mom…”</p>
+
+            </div>
+        </div>
+    </div>
+
+    <!--FOOTER-->
+    <div id="footer">
+        <div id="center" class="column placeholder-box col-xl-3"></div>
+        <div id="center" class="column col-xl-3 col-l-4 col-m-4 col-s-7">
+            <h3>interesting</h3>
+            <p>Congratulations! You've found the personal website of Thomas Graham. I'm originally from Raleigh, North Carolina and now make home in San Francisco.
+                    For more information about me and about this site, please see my <a href="../about.html">about</a> page.
+                </p>
+        </div>
+        <div id="center" class="column col-xl-3 col-l-4 col-m-4 col-s-7">
+            <h3>available</h3>
+            <div class="social-list">
+                <a id="facebook" href="https://www.facebook.com/thomas.graham.756/" alt="Thomas Graham's Facebook Page"
+                    title="Thomas's Facebook Page">
+                    <img src="../images/f-Logo_Assets/F_Logo_Online_09_2018/White/SVG/flogo-HexRBG-Wht-512.svg">
+                </a>
+                <a id="instagram" href="https://www.instagram.com/picsbytgraham/" title="He once had an Instagram, too...">
+                    <img class="col-12" src="../images/GlyphLogo_May2016_Onlinev2/Insta_purple.png">
+                </a>
+                <a id="twitter" href="https://twitter.com/tgthepastaman" alt="Thomas Graham's Twitter Account." title="Thomas Graham's Antiquated Twitter">
+                    <img class="col-12" src="../images/Twitter Logos/Twitter Logos/Twitter_Logo_Blue/Twitter-Logo-Purple.png">
+                </a>
+                <a id="linkedin" href="https://www.linkedin.com/in/thomas-graham-b23934130/" alt="Thomas Graham's LinkedIn Page"
+                    title="My LinkedIn Page">
+                    <img class="col-12" src="../images/linkedin_brand_package/Linkedin.png">
+                </a>
+            </div>
+            <br>
+            <ul>
+                <li>Find me in SF's beautiful <a href="https://goo.gl/maps/qqmFcuEKcDT2">Lower Haight</a></li>
+                <li>Or at <a href="http://beanbag.cafe/">various</a> <a href="http://www.neighborscornersf.com/">internet</a>
+                    <a href="http://www.streamlinesf.com/">cafes</a></li>
+                <li>The literarily inclined can <a href="mailto:graham.thomask@gmail.com?Subject=I%20hate%20your%20website">email
+                        me</a></li>
+                <li>(Don't call me - it's 2018)</li>
+            </ul>
+        </div>
+        <div id="center" class="column col-xl-3 col-l-4 col-m-4 col-s-7">
+            <h3>honest</h3>
+            <p id="bottom-footer-p">
+                This website was made by me. I did so by taking some <a href="mozilla website" alt="Mozilla's learning website.">
+                    online courses</a> through
+                Mozilla Firefox's delightful website.
+                I also looked through some templates from <a href="bootstrap templates" alt="
+                            bootstrap templates website">Bootstrap
+                    Templates</a> and <a href="the holy grail" alt="A website design blog.">The Holy Grail</a> (a real
+                site, I
+                know) to see
+                how real live websites were made in the real live world. I borrowed some of
+                their ideas.
+            </p>
+        </div>
+    </div>
+    <div class="small-footer">
+        <div class="column placeholder-box col-xl-3"></div>
+        <p class="column col-xl-9">© 2018, TKG Enterprises, LLC. All rights reserved. Not liable for anything. |
+            <a href="https://app.termly.io/document/privacy-policy/e9612db4-7e59-4bdb-a0be-d9635f33f77b">Privacy Policy</a>
+            |
+            <a href="../disclaimer.html">Scary Legal Disclaimer</a>
+            |
+            <a href="https://www.bojangles.com/">Delicious Biscuits</a>
+
+        </p>
+    </div>
+    <div class="to-top">
+        <a href="#main_menu"><img src="../images/to-top-black.png"></a>
+
+    </div>
+    <!--FIN DE FOOTER-->
+</body>
+
+</html>
