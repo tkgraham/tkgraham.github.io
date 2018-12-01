@@ -156,6 +156,10 @@
     .black-about-text h1 {
         letter-spacing: 2px;
     }
+
+    .application {
+        padding-top: 50px;
+    }
     
     /* FOOTER STYLING */
 
